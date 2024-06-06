@@ -57,19 +57,20 @@ export default function Filters({ onChange }) {
     try {
       // const globalUser = JSON.parse(getToken());
       const districtData = JSON.parse(getDistrict());
-      const municipalityDetail = JSON.parse(getPanchayat());
-      const ulb = JSON.parse(getBlock());
-      const villageData = JSON.parse(getVillage());
+      console.log('districtData', districtData)
+      // const municipalityDetail = JSON.parse(getPanchayat());
+      // const ulb = JSON.parse(getBlock());
+      // const villageData = JSON.parse(getVillage());
       // const { districtDetail, municipalityDetail, ulb, roles, userName } =
       //   globalUser || {};
       let district_object = {
         label:
           districtData.districtName +
           " (" +
-          districtData.lgdCode +
+          districtData.id +
           ")",
-        value: districtData.lgdCode,
-        code: districtData.lgdCode,
+        value: districtData.id,
+        code: districtData.id,
       };
 
       console.log(district_object, "district object");
@@ -163,9 +164,9 @@ export default function Filters({ onChange }) {
 
         for (let i = 0; i < district_reducer.length; i++) {
           let object = {
-            label: district_reducer[i].districtName + " (" + district_reducer[i].lgdCode + ")",
-            value: district_reducer[i].lgdCode,
-            code: district_reducer[i].lgdCode,
+            label: district_reducer[i].name + " (" + district_reducer[i].id + ")",
+            value: district_reducer[i].id,
+            code: district_reducer[i].id,
           };
           district_list.push(object);
 
@@ -324,7 +325,7 @@ console.log('village_reducer', village_reducer)
   return (
     <>
       <Grid container spacing={4} style={{ flex: 1, padding: 20 }}>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <InputLabel
             style={{ marginBottom: 5 }}
             id="demo-simple-select-helper-label"
@@ -342,7 +343,7 @@ console.log('village_reducer', village_reducer)
           />
         </Grid>
 
-        <Grid item xs={3}>
+        {/* <Grid item xs={3}>
           <InputLabel
             style={{ marginBottom: 5 }}
             id="demo-simple-select-helper-label"
@@ -394,7 +395,7 @@ console.log('village_reducer', village_reducer)
             onChange={handleVillageChange}
             isDisabled={selectDisabledVillage}
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </>
   );

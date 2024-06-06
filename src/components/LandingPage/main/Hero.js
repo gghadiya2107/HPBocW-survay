@@ -34,7 +34,7 @@ const Hero = () => {
               paddingBottom: "15px",
             }}
           >
-            Field Survey - Himachal Pradesh Farmer Database
+            Registration - Contractor & Construction Worker
           </Typography>
           <Typography
             style={{
@@ -50,7 +50,7 @@ const Hero = () => {
             <Button
               variant="contained"
               // color="primary"
-              style={{ marginLeft: 5 , background : "#75A47F"}}
+              style={{ marginLeft: 5 , background : "#9C1919"}}
             >
               Download the Application
             </Button>

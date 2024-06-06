@@ -18,7 +18,7 @@ export const onFamiliesList = (body) => {
   return async (dispatch) => {
     // debugger
     try {
-      let url =  `/farmer/summaryList`
+      let url =  `/worker/summaryList`
       if(body?.size){
         url = url +  `?size=${encryptDataGet(JSON.stringify(body?.size))}`
       }
@@ -27,17 +27,17 @@ export const onFamiliesList = (body) => {
       }
      
       if(body?.districtCode){
-        url = url +  `&districtCode=${encryptDataGet(JSON.stringify(body?.districtCode))}`
+        url = url +  `&districtId=${encryptDataGet(JSON.stringify(body?.districtCode))}`
       }
-      if(body?.blockCode){
-        url = url +  `&blockCode=${encryptDataGet(JSON.stringify(body?.blockCode))}`
-      }
-      if(body?.panchayatCode){
-        url = url +  `&panchayatCode=${encryptDataGet(JSON.stringify(body?.panchayatCode))}`
-      }
-      if(body?.villageCode){
-        url = url +  `&villageCode=${encryptDataGet(JSON.stringify(body?.villageCode))}`
-      }
+      // if(body?.blockCode){
+      //   url = url +  `&blockCode=${encryptDataGet(JSON.stringify(body?.blockCode))}`
+      // }
+      // if(body?.panchayatCode){
+      //   url = url +  `&panchayatCode=${encryptDataGet(JSON.stringify(body?.panchayatCode))}`
+      // }
+      // if(body?.villageCode){
+      //   url = url +  `&villageCode=${encryptDataGet(JSON.stringify(body?.villageCode))}`
+      // }
       const response = await axios.get(url);
 
       let resData = decryptData(response?.data?.data)

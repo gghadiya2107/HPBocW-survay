@@ -25,18 +25,18 @@ export const onDashboarFilters = (body) => {
       if(body?.districtId){
         url = url +  `?districtCode=${encryptDataGet(JSON.stringify(body?.districtId))}`
       }
-      if(body?.municipalId){
-        url = url +  `&blockCode=${encryptDataGet(JSON.stringify(body?.municipalId))}`
-      }
-      if(body?.wardId){
-        url = url +  `&panchayatCode=${encryptDataGet(JSON.stringify(body?.wardId))}`
-      }
-      if(body?.villageId){
-        url = url +  `&villageCode=${encryptDataGet(JSON.stringify(body?.villageId))}`
-      }
+      // if(body?.municipalId){
+      //   url = url +  `&blockCode=${encryptDataGet(JSON.stringify(body?.municipalId))}`
+      // }
+      // if(body?.wardId){
+      //   url = url +  `&panchayatCode=${encryptDataGet(JSON.stringify(body?.wardId))}`
+      // }
+      // if(body?.villageId){
+      //   url = url +  `&villageCode=${encryptDataGet(JSON.stringify(body?.villageId))}`
+      // }
       const response = await axios.get(url);
-
       let data =  decryptData(response?.data?.data)
+      console.log('response', data)
       dispatch(fetchDashboardSuccess(data));
     } catch (error) {
       dispatch(fetchDashboardFaliure(error));

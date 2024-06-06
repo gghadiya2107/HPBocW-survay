@@ -124,9 +124,9 @@ function Layout(props) {
   const drawer = (
     <div style={{}}>
       <Toolbar>
-        <Image src={getImagePath('/himachal_logoo.svg')} width={65} height={45} alt="Logo" />
-        <Typography variant="h6" noWrap component="div" marginLeft={2}>
-        Field Survey
+        <Image src={getImagePath('/himachal_logoo.svg')} width={60} height={45} alt="Logo" />
+        <Typography variant="h6" noWrap component="div" marginLeft={1}>
+        HPBocW Survey
                   {/* <br /> (Urban) */}
         </Typography>
       </Toolbar>

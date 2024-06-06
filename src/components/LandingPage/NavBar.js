@@ -66,7 +66,7 @@ const ResponsiveAppBar = (props) => {
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
 
             <Typography variant="h6" sx={{ my: 2 }}>
-                Field Survey
+                HPBocW Survey
             </Typography>
             <Divider />
             <List>
@@ -86,7 +86,7 @@ const ResponsiveAppBar = (props) => {
         <Box sx={{ display: 'flex' }}>
 
             <CssBaseline />
-            <AppBar style={{ position: 'sticky', background: "#75A47F" }}>
+            <AppBar style={{ position: 'sticky', background: "#9C1919" }}>
                 <Container maxWidth="xxl">
                     <Toolbar disableGutters variant="dense" style={{ height: 22, }}>
                         <Box
@@ -105,7 +105,7 @@ const ResponsiveAppBar = (props) => {
                             noWrap
                             component="div"
                             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                        >Field Survey - Himachal Pradesh Farmer Database
+                        >HPBocW Contractor & Construction Worker Registration
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', } }}>
@@ -126,7 +126,7 @@ const ResponsiveAppBar = (props) => {
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                         >
-                           Field Survey - Himachal Pradesh Farmer Database
+                           HPBocW Contractor & Construction Worker Registration
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
                             {pages.map((page) => (

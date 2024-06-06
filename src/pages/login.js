@@ -96,7 +96,7 @@ function SignIn(props) {
 
   useEffect(() => {
     if (loginCalled) {
-
+      console.log('data', data)
       setLoginCalled(false);
       if (data?.id) {
         handleClick();
@@ -256,7 +256,8 @@ function SignIn(props) {
               >
                 Welcome to{" "}
                 <Box sx={{ color: "#6366F1" }} target="_blank">
-                Field Survey - Himachal Pradesh Farmer Database
+                
+HPBocW Contractor & Construction Worker Registration
                 </Box>
               </Typography>
 

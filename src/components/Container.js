@@ -47,7 +47,7 @@ import TableRow from "@mui/material/TableRow";
 
 import { onShowLoader } from "../network/actions/showLoader";
 import Filters from "./dashboard/filters";
-import { getToken } from "../utils/cookie";
+import { getDistrict, getToken } from "../utils/cookie";
 import { onDashboarFilters } from "../network/actions/dashboardFilter";
 
 const columns = [
@@ -160,15 +160,15 @@ const Dashboard = () => {
 
   console.log('dashboardFilterState', dashboardFilterState)
 
-  const handleFilterChange = ({ district, municipal, ward,village }) => {
+  const handleFilterChange = ({ district }) => {
     setSelectedDistrict(district);
-    setSelectedMunicipality(municipal);
-    setSelectedWard(ward);
-    setSelectDisabledVillage(village)
+    // setSelectedMunicipality(municipal);
+    // setSelectedWard(ward);
+    // setSelectDisabledVillage(village)
 
-    console.log('allDataa', {district , municipal , ward , village})
-    if (district || municipal || ward || village) {
-      const queryParams = createQueryParams(district, municipal?.value, ward?.value, village?.value);
+    console.log('allDataa', {district})
+    if (district) {
+      const queryParams = createQueryParams(district);
       console.log('queryParams', queryParams)
       dispatch(onDashboarFilters(queryParams));
     }
@@ -215,17 +215,12 @@ const Dashboard = () => {
 
   const createQueryParamsDefault = (
     selectedDistrict,
-    selectedMunicipality,
-    selectedWard,
-    selectedVillage
+   
   ) => {
     const queryParams = {};
 
-    if (selectedDistrict) queryParams.districtId = selectedDistrict;
-    if (selectedMunicipality) queryParams.municipalId = selectedMunicipality;
-    if (selectedWard) queryParams.wardId = selectedWard;
-    if (selectedVillage) queryParams.villageId = selectedVillage;
-
+    console.log('queryParams', queryParams)
+    if (selectedDistrict) queryParams.districtId = selectedDistrict?.toString();
     return queryParams;
   };
 
@@ -237,17 +232,21 @@ const Dashboard = () => {
 
   useEffect(() => {
     try {
-      const globalUser = JSON.parse(getToken());
-      const { districtDetail, municipalityDetail, ulb, roles } =
-        globalUser || {};
+      const globalUser = JSON.parse(getDistrict());
+      // const { districtDetail, municipalityDetail, ulb, roles } =
+      //   globalUser || {};
 
+        console.log('districtDetail', globalUser)
       const queryParams = createQueryParamsDefault(
-        districtDetail?.districtCode,
-        municipalityDetail?.municipalId,
-        ulb?.id
+        globalUser?.id,
+        // municipalityDetail?.municipalId,
+        // ulb?.id
       );
+      console.log('queryParams', queryParams)
       dispatch(onDashboarFilters(queryParams));
-    } catch (e) {}
+    } catch (e) {
+      console.log('error', e)
+    }
   }, []);
 
   /**
@@ -273,18 +272,15 @@ const Dashboard = () => {
     selectedWard,
   ]);
 
-  /**
-   * Effect for logging or reacting to state changes
-   * dispatch(onDashboarFilters(queryParams)); Redux
-   */
+ 
   useEffect(() => {
     if (dashboardFilterState?.data) {
       // const { data, status, message } = dashboardFilterState.data || {};
       if (dashboardFilterState?.data) {
         // Set the parsed data to state variables
         setSurveyInfo(dashboardFilterState?.data?.surveyInfoList);
-        setVerificationInfoList(dashboardFilterState?.data?.verificationInfoList);
-        setAadhaarEkycInfoList(dashboardFilterState?.data?.aadhaarEkycInfoList);
+        setVerificationInfoList(dashboardFilterState?.data?.workerTypeInfoList);
+        setAadhaarEkycInfoList(dashboardFilterState?.data?.beneficiaryCategoryInfoList);
         setEconomicCategoryInfoList(dashboardFilterState?.data?.economicCategoryInfoList);
         setRetainInInfoList(dashboardFilterState?.data?.retainInInfoList);
         
@@ -330,8 +326,7 @@ const Dashboard = () => {
             </Grid>
           </>
         )}
-
-        {verificationInfoList?.length > 0 && (
+ {aadhaarEkycInfoList?.length > 0 && (
           <>
             <Box
               style={{ background: "#074465", color: "#FFF", borderRadius: 6 }}
@@ -342,36 +337,7 @@ const Dashboard = () => {
                 textAlign={"left"}
                 style={{ paddingLeft: 10 }}
               >
-                Verification Status
-              </Typography>
-            </Box>
-
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <TopCard
-                  top_header_data={verificationInfoList.map((item) => ({
-                    label: item.headerName.toUpperCase(),
-                    value: item.headerValueCount ? item.headerValueCount : 0,
-                    color: "red", // You can customize this color based on your requirements
-                  }))}
-                />
-              </Grid>
-            </Grid>
-          </>
-        )}
-
-        {aadhaarEkycInfoList?.length > 0 && (
-          <>
-            <Box
-              style={{ background: "#074465", color: "#FFF", borderRadius: 6 }}
-            >
-              <Typography
-                fontSize={20}
-                fontStyle={700}
-                textAlign={"left"}
-                style={{ paddingLeft: 10 }}
-              >
-                Aadhaar eKYC Status
+                Benificiary Category Status
               </Typography>
             </Box>
 
@@ -389,6 +355,36 @@ const Dashboard = () => {
           </>
         )}
 
+        {verificationInfoList?.length > 0 && (
+          <>
+            <Box
+              style={{ background: "#074465", color: "#FFF", borderRadius: 6 }}
+            >
+              <Typography
+                fontSize={20}
+                fontStyle={700}
+                textAlign={"left"}
+                style={{ paddingLeft: 10 }}
+              >
+                Work Type Status
+              </Typography>
+            </Box>
+
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TopCard
+                  top_header_data={verificationInfoList.map((item) => ({
+                    label: item.headerName.toUpperCase(),
+                    value: item.headerValueCount ? item.headerValueCount : 0,
+                    color: "red", // You can customize this color based on your requirements
+                  }))}
+                />
+              </Grid>
+            </Grid>
+          </>
+        )}
+
+       
 
         
       {economicCategoryInfoList?.length > 0 && (

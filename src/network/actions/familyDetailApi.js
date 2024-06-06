@@ -22,7 +22,7 @@ export const onFamiliesDetailApi = (id) => {
   return async (dispatch) => {
     try {
       const response = await axios.get(
-        `/farmer/detail?id=${encryptDataGet(JSON.stringify(id))}`,
+        `/worker/detail?id=${encryptDataGet(JSON.stringify(id))}`,
         {}
       );
       let responseData = decryptData(response?.data?.data)

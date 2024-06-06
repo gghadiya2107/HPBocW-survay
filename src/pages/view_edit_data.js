@@ -54,18 +54,13 @@ import ConsentHeader from "../components/verify/consent/ConsentHeader";
 const columns = [
   {
     id: "name",
-    label: "Farmer Name",
+    label: "Worker Name",
     minWidth: 170,
     align: "center",
     fontWeight: "bold",
   },
-  { id: "kisanId", label: "PM Kisan Id.", minWidth: 100, align: "center" },
-  {
-    id: "totalFamilyMembers",
-    label: "Family Members",
-    align: "center",
-    // format: (value) => value.toLocaleString("en-US"),
-  },
+  { id: "gender", label: "Gender", minWidth: 100, align: "center" },
+ 
   {
     id: "dateOfBirth",
     label: "Date of Birth",
@@ -89,8 +84,8 @@ const columns = [
     // format: (value) => value.toFixed(2),
   },
   {
-    id: "qualification",
-    label: "Qualification",
+    id: "category",
+    label: "Category",
     align: "center",
     // format: (value) => value.toFixed(2),
   },
@@ -147,6 +142,7 @@ const ViewData = () => {
 
   const dispatch = useDispatch();
   const familiesList = useSelector((state) => state.familiesList);
+  console.log('familiesList', familiesList)
 
   const familiesDetailApi = useSelector((state) => state.familiesDetailApi);
 
@@ -176,9 +172,9 @@ const ViewData = () => {
       0,
       100,
       district?.code,
-      municipal?.value,
-      ward?.id,
-      village?.value,
+      // municipal?.value,
+      // ward?.id,
+      // village?.value,
       1
     );
     dispatch(onFamiliesList(queryParams));
@@ -191,26 +187,25 @@ const ViewData = () => {
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
 
-    if (selectedDistrict || selectedMunicipality || selectedWard) {
+    if (selectedDistrict ) {
       const queryParams = createQueryParamsDefault(
         newPage - 1,
         100,
         selectedDistrict?.code,
-        selectedMunicipality?.municipalId,
-        selectedWard?.id,
+        // selectedMunicipality?.municipalId,
+        // selectedWard?.id,
         1
       );
       dispatch(onFamiliesList(queryParams));
     } else {
-      const globalUser = JSON.parse(getToken());
-      const { districtDetail, municipalityDetail, ulb, roles } =
-        globalUser || {};
+      const globalUser = JSON.parse(getDistrict());
+      
       const queryParams = createQueryParamsDefault(
         newPage - 1,
         100,
-        districtDetail?.districtCode,
-        municipalityDetail?.municipalId,
-        ulb?.id,
+        globalUser?.id,
+        // municipalityDetail?.municipalId,
+        // ulb?.id,
         1
       );
       dispatch(onFamiliesList(queryParams));
@@ -223,6 +218,7 @@ const ViewData = () => {
   };
 
   useEffect(() => {
+    console.log('familiesDetailApi', familiesDetailApi)
     if (familiesDetailApi?.data?.firstName) {
       // const { data, status, message, rationCardAlreadyExists } =
       //   familiesList.data || {};
@@ -286,16 +282,16 @@ const ViewData = () => {
 
   useEffect(() => {
     const districtDetail = JSON.parse(getDistrict());
-    const municipalityDetail = JSON.parse(getPanchayat());
-    const ulb = JSON.parse(getVillage());
+    // const municipalityDetail = JSON.parse(getPanchayat());
+    // const ulb = JSON.parse(getVillage());
     // const { districtDetail, municipalityDetail, ulb, roles } = globalUser || {};
 
     const queryParams = createQueryParamsDefault(
       0,
       100,
-      districtDetail?.districtCode,
-      municipalityDetail?.municipalId,
-      ulb?.id,
+      districtDetail?.id,
+      // municipalityDetail?.municipalId,
+      // ulb?.id,
       1
     );
     dispatch(onFamiliesList(queryParams));
@@ -311,7 +307,7 @@ const ViewData = () => {
     }).toString();
     router.push(`/edit_modify?${queryParam}`);
   };
-
+console.log('familyList', familyList)
   return (
     <>
       <Layout>
@@ -383,7 +379,7 @@ const ViewData = () => {
                                         typeof value === "number"
                                           ? column.format(value)
                                           : value}
-                                        {index > 6 && (
+                                        {index > 5 && (
                                           <>
                                             <Stack spacing={2} direction="row">
                                               {isAdmin && (

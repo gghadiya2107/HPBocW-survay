@@ -9,7 +9,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import { getImagePath } from '../../../utils/CustomImagePath';
 
 const timeline = {
-    backgroundColor: "#75A47F",
+    backgroundColor: "#9C1919",
     color: "white",
     fontSize: "40px",
     height: "100px",
@@ -68,7 +68,7 @@ const SubSection = () => {
       <TimelineItem>
         <TimelineSeparator>
           <TimelineDot style={timeline}>01</TimelineDot>   
-          <TimelineConnector style={{backgroundColor: "#75A47F"}}/>
+          <TimelineConnector style={{backgroundColor: "#9C1919"}}/>
         </TimelineSeparator>
         <TimelineContent>
         <Grid container spacing={5} style={{
@@ -119,7 +119,7 @@ const SubSection = () => {
       <TimelineItem>
         <TimelineSeparator>
         <TimelineDot  style={timeline}>02</TimelineDot>   
-        <TimelineConnector style={{backgroundColor: "#75A47F"}}/>
+        <TimelineConnector style={{backgroundColor: "#9C1919"}}/>
         </TimelineSeparator>
         <TimelineContent>  <Grid container spacing={5} style={{
                     display: 'flex',

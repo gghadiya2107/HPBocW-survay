@@ -19,9 +19,10 @@ export const fetchDistrictFailure = (error) => ({
 export const onDistrict = () => {
   return async (dispatch) => {
     try {
-      const response = await axios.get(`/master-data?status=${encryptDataGet(`true`)}&masterName=${encryptDataGet("district")}`, {});
+      const response = await axios.get(`/master-data?status=${encryptDataGet(`true`)}&masterName=${encryptDataGet("district")}&parentId=${encryptDataGet("2")}`, {});
       console.log(response, "dashboard response")
       let responseData = decryptData(response?.data?.data)
+      console.log('responseData', responseData)
       dispatch(fetchDistrictSuccess(responseData));
     } catch (error) {
       dispatch(fetchDistrictFailure(error));
