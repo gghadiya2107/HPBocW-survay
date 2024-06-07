@@ -118,22 +118,22 @@ import {
                   >
                     <Box style={{ textAlign: "center" }}>
                       <Typography variant="subtitle1">
-                        {selectedFamily?.cropName}
+                        {selectedFamily?.bankName}
                       </Typography>
                     </Box>
                     <Box style={{ textAlign: "center" }}>
                       <Typography variant="subtitle1">
-                        {selectedFamily?.cropSeasonName}
+                        {selectedFamily?.bankIfsc}
                       </Typography>
                     </Box>
                     <Box style={{ textAlign: "center" }}>
                       <Typography variant="subtitle1">
-                        {selectedFamily?.cropTypeName}
+                        {selectedFamily?.bankAccountNo}
                       </Typography>
                     </Box>
                     <Box style={{ textAlign: "center" }}>
                       <Typography variant="subtitle1">
-                        {selectedFamily?.cropArea}
+                        {selectedFamily?.bankMobile}
                       </Typography>
                     </Box>
                   </Box>

@@ -12,7 +12,7 @@ export default function MemberDetailsHeader() {
         textAlign="left"
         paddingLeft={2}
       >
-        Land Records Details
+        Employee Details
       </Typography>
       {/* Headings */}
       <Divider />
@@ -34,17 +34,17 @@ export default function MemberDetailsHeader() {
           mb={1}
         >
           <Box flexBasis="20%" style={{ textAlign: "center" }}>
-            <Typography variant="subtitle2">Name</Typography>
+            <Typography variant="subtitle2">Office Name</Typography>
           </Box>
           <Box flexBasis="20%" style={{ textAlign: "center" }}>
-            <Typography variant="subtitle2">District</Typography>
+            <Typography variant="subtitle2">Employee Name</Typography>
           </Box>
           <Box flexBasis="20%" style={{ textAlign: "center" }}>
-            <Typography variant="subtitle2">caste</Typography>
+            <Typography variant="subtitle2">Registration Number</Typography>
           </Box>
           <Box flexBasis="20%" style={{ textAlign: "center" }}>
             <Typography variant="subtitle2">
-            subCaste
+            beneficiaryType
             </Typography>
           </Box>
           <Box flexBasis="20%"></Box>

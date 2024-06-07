@@ -31,25 +31,20 @@ import {
 } from "@mui/icons-material";
 import ConfirmDialogEdit from "../ConfirmDialogEdit";
 
-export default function Members({ memberObject }) {
+export default function Members({ memberObject, office }) {
   //console.log("Edit Page Here I come", memberObject);
 
   const memberObject1 = {
-    name : memberObject?.fullName,
-    caste : memberObject?.caste,
-    districtName : memberObject?.districtName,
-    villageName : memberObject?.villageName,
-    subCaste : memberObject?.subCaste,
-    jamabandiYear : memberObject?.jamabandiYear,
-    kangnoLand : memberObject?.kangnoLand,
-    kathauniLand : memberObject?.kathauniLand,
-    landPatwar : memberObject?.landPatwar,
-    mauza : memberObject?.mauza,
-    rakBa : memberObject?.rakBa,
-    tehsilName : memberObject?.tehsilName,
-    attachment1 : memberObject?.pdfDownload,
-    attachment2 : memberObject?.pdf2,
-
+    officeName : office?.labourOffice,
+    employeeName : memberObject?.employerName,
+    RegistrationNo : memberObject?.employerRegistrationNo,
+    beneficiaryType : memberObject?.beneficiaryType,
+    district : memberObject?.district,
+    block : memberObject?.block,
+    state : memberObject?.state,
+    workingDaysInMonths : memberObject?.workingDaysInMonths,
+    pincode : memberObject?.pincode,
+    employerAddress : memberObject?.employerAddress,
   }
 
   const [expanded, setExpanded] = useState(false);
@@ -133,24 +128,24 @@ export default function Members({ memberObject }) {
                 >
                   <Box style={{ textAlign: "center" }}>
                     <Typography variant="subtitle1">
-                      {memberObject.fullName}
+                      {office?.labourOffice}
                     </Typography>
                   </Box>
                   <Box style={{ textAlign: "center" }}>
                     <Typography variant="subtitle1">
-                      {memberObject.districtName}
+                      {memberObject.employerName}
                     </Typography>
                   </Box>
                   <Box style={{ textAlign: "center" }}>
                     <Typography variant="subtitle1">
-                    {memberObject?.caste}
+                    {memberObject?.employerRegistrationNo}
                       {/* {`XXXX-XXXX-${memberObject.aadhaarNumber
                         .toString()
                         .slice(-4)}`} */}
                     </Typography>
                   </Box>
                   <Box style={{ textAlign: "center" }}>
-                  {memberObject?.subCaste}
+                  {memberObject?.beneficiaryType}
                     {/* {memberObject.isEkycVerified ? (
                       <Chip
                         icon={<DoneAll fontSize="small" color="success" />}

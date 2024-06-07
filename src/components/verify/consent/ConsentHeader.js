@@ -36,8 +36,8 @@ export default function ConsentHeader({ selectedFamily }) {
   //console.log("Edit Page Here I come ConsentHeader", selectedFamily);
 
   const extractedConsent = {
-    fileData: selectedFamily?.farmerConsentUrl,
-    consentDocName: selectedFamily?.farmerConsentUrl?.split("consent/")?.[1],
+    fileData: selectedFamily?.workerConsentURL,
+    consentDocName: selectedFamily?.workerConsentURL?.split("consent/")?.[1],
   };
 
   const [expanded, setExpanded] = useState(false);
@@ -90,7 +90,7 @@ export default function ConsentHeader({ selectedFamily }) {
                 >
                   <Box style={{ textAlign: "center" }}>
                     <Typography variant="subtitle1">
-                      Consent Details (Declaration Signed by the Farmer)
+                      Consent Details (Declaration Signed by the Worker)
                     </Typography>
                   </Box>
                 </Box>

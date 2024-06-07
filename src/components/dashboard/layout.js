@@ -126,7 +126,7 @@ function Layout(props) {
       <Toolbar>
         <Image src={getImagePath('/himachal_logoo.svg')} width={60} height={45} alt="Logo" />
         <Typography variant="h6" noWrap component="div" marginLeft={1}>
-        HPBocW Survey
+        HPBoCW Survey
                   {/* <br /> (Urban) */}
         </Typography>
       </Toolbar>

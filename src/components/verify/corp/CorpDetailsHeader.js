@@ -14,7 +14,7 @@ export default function CorpDetailsHeader() {
         paddingLeft={2}
         fontStyle={"bold"}
       >
-        Corp Details
+        Bank Details
       </Typography>
 
       <Paper
@@ -35,16 +35,16 @@ export default function CorpDetailsHeader() {
           mb={1}
         >
           <Box flexBasis="20%" style={{ textAlign: "center" }}>
-            <Typography variant="subtitle2">Name</Typography>
+            <Typography variant="subtitle2">Bank Name</Typography>
           </Box>
           <Box flexBasis="20%" style={{ textAlign: "center" }}>
-            <Typography variant="subtitle2">Season Name</Typography>
+            <Typography variant="subtitle2">Bank IFSC</Typography>
           </Box>
           <Box flexBasis="20%" style={{ textAlign: "center" }}>
-            <Typography variant="subtitle2">Type Name</Typography>
+            <Typography variant="subtitle2">Bank Account No</Typography>
           </Box>
           <Box flexBasis="20%" style={{ textAlign: "center" }}>
-            <Typography variant="subtitle2">Crop Area</Typography>
+            <Typography variant="subtitle2">Bank Mobile</Typography>
           </Box>
           <Box flexBasis="20%"></Box>
         </Box>

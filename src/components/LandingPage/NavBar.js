@@ -66,7 +66,7 @@ const ResponsiveAppBar = (props) => {
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
 
             <Typography variant="h6" sx={{ my: 2 }}>
-                HPBocW Survey
+                HPBoCW Survey
             </Typography>
             <Divider />
             <List>
@@ -105,7 +105,7 @@ const ResponsiveAppBar = (props) => {
                             noWrap
                             component="div"
                             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                        >HPBocW Contractor & Construction Worker Registration
+                        >HPBoCW Contractor & Construction Worker Registration
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', } }}>
@@ -126,7 +126,7 @@ const ResponsiveAppBar = (props) => {
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                         >
-                           HPBocW Contractor & Construction Worker Registration
+                           HPBoCW Contractor & Construction Worker Registration
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
                             {pages.map((page) => (

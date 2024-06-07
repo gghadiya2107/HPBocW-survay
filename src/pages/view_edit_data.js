@@ -50,6 +50,8 @@ import AadharDetailsHeader from "../components/verify/aadhar/AadharDetailsHeader
 import Aadhar from "../components/verify/aadhar/Aadhar";
 import ConsentDetailsHeader from "../components/verify/consent/ConsentDetailsHeader";
 import ConsentHeader from "../components/verify/consent/ConsentHeader";
+import DocumentsDetailsHeader from "../components/verify/consent/DocumentsDetailsHeader";
+import DocumentsHeader from "../components/verify/consent/DocumentsHeader";
 
 const columns = [
   {
@@ -522,53 +524,50 @@ console.log('familyList', familyList)
                       <Families selectedFamily={selectedFamily} />
                     </Paper>
                     <Divider>&nbsp; &nbsp;</Divider>
-                   {selectedFamily?.cropDetails && <><Grid container>
+                   {selectedFamily?.bankDetails && <><Grid container>
                       <Grid item={true} xs={12}>
                         <CorpDetailsHeader />
                       </Grid>
 
                      
                     </Grid>
-                    {selectedFamily?.cropDetails &&
-                      selectedFamily?.cropDetails.map((cropDetail, index) => (
-                        <Paper elevation={3} variant="elevation" key={index}>
-                      <Corp selectedFamily={cropDetail} />
-                    </Paper>
-                      ))}
+                    {selectedFamily?.bankDetails &&
+                      <Paper elevation={3} variant="elevation">
+                      <Corp selectedFamily={selectedFamily?.bankDetails} />
+                    </Paper>}
                       </>}
                     
                     <Divider>&nbsp; &nbsp;</Divider>
-                    {selectedFamily?.landRecords &&<><Grid container>
+                    {selectedFamily?.employerDetails &&<><Grid container>
                       <Grid item={true} xs={12}>
                         <MemberDetailsHeader />
                       </Grid>
                     </Grid>
-                    {selectedFamily?.landRecords &&
-                      selectedFamily?.landRecords.map((landRecord, index) => (
-                        <Paper
-                          elevation={3}
-                          variant="elevation"
-                          style={{ marginBottom: 8 }}
-                          key={index}
-                        >
-                          <Members memberObject={landRecord} />
-                        </Paper>
-                      ))}</>}
+                    {selectedFamily?.employerDetails &&
+                     <Paper
+                     elevation={3}
+                     variant="elevation"
+                     style={{ marginBottom: 8 }}
+                     
+                   >
+                     <Members memberObject={selectedFamily?.employerDetails} office={selectedFamily?.officeDetails} />
+                   </Paper>
+                     }</>}
                   </div>
 
 
-                  {selectedFamily?.farmerAadhaarDetails && <><Grid container>
+                  {selectedFamily?.aadhaarDetails && <><Grid container>
                       <Grid item={true} xs={12}>
                         <AadharDetailsHeader />
                       </Grid>
                     </Grid>
 
                     <Paper elevation={3} variant="elevation">
-                      <Aadhar selectedFamily={selectedFamily?.farmerAadhaarDetails} />
+                      <Aadhar selectedFamily={selectedFamily?.aadhaarDetails} />
                     </Paper></>}
                     <Divider>&nbsp; &nbsp;</Divider>
 
-                  { selectedFamily?.farmerConsentUrl &&<> <Grid container>
+                  { selectedFamily?.workerConsentURL &&<> <Grid container>
                       <Grid item={true} xs={12}>
                         <ConsentDetailsHeader />
                       </Grid>
@@ -578,6 +577,18 @@ console.log('familyList', familyList)
                     <Paper elevation={3} variant="elevation">
                     {selectedFamily && (
                       <ConsentHeader selectedFamily={selectedFamily} />
+                    )}
+                  </Paper> </>}
+                  { selectedFamily?.documents &&<> <Grid container>
+                      <Grid item={true} xs={12}>
+                        <DocumentsDetailsHeader />
+                      </Grid>
+
+                     
+                    </Grid>
+                    <Paper elevation={3} variant="elevation">
+                    {selectedFamily && (
+                      <DocumentsHeader selectedFamily={selectedFamily?.documents} />
                     )}
                   </Paper> </>}
                 </Box>

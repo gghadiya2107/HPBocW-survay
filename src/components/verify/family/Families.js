@@ -22,20 +22,23 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Families({ selectedFamily }) {
-  //console.log("selectedFamily", selectedFamily);
+  console.log("selectedFamily", selectedFamily);
 
   const extractedFamilyData = {
     name: selectedFamily.firstName+" "+selectedFamily?.lastName,
-    qualificationName: selectedFamily.qualificationName,
-    genderName: selectedFamily.genderName,
-    email: selectedFamily.email,
-    dateOfBirth: selectedFamily.dateOfBirth,
+    gender: selectedFamily.gender,
+    birthDate: selectedFamily.dateOfBirth,
     contactNumber: selectedFamily.contactNumber,
-    casteName: selectedFamily.casteName,
-    districtName: selectedFamily.districtName,
-    blockName: selectedFamily.blockName,
-    panchayatName: selectedFamily.panchayatName,
-    villageName: selectedFamily.villageName,
+    category: selectedFamily.category,
+    district: selectedFamily.district,
+    block: selectedFamily.block,
+    maritalStatus: selectedFamily.maritalStatus,
+    permanentAddress: selectedFamily.permanentAddress,
+    workerType: selectedFamily.workerType,
+    pincode: selectedFamily.pincode,
+    registrationDate: selectedFamily.registrationDate,
+    renewalDate: selectedFamily.renewalDate,
+    // oldRegistrationNumber: selectedFamily.oldRegistrationNumber,
   };
 
   const [enlarged, setEnlarged] = useState(false);
@@ -150,7 +153,7 @@ if (modalContent) {
                   </Box>
                   <Box style={{ textAlign: "center" }}>
                     <Typography variant="subtitle1">
-                      {selectedFamily.districtName}
+                      {selectedFamily.district}
                     </Typography>
                   </Box>
                   <Box style={{ textAlign: "center" }}>
@@ -160,7 +163,7 @@ if (modalContent) {
                   </Box>
                   <Box style={{ textAlign: "center" }}>
                     <Typography variant="subtitle1">
-                      {selectedFamily.email}
+                      {selectedFamily.gender}
                     </Typography>
                   </Box>
                 </Box>
@@ -283,13 +286,13 @@ if (modalContent) {
                       padding: "5px",
                     }}
                   > 
-                 {selectedFamily?.bplCertUrl &&  <><Box  style={{
+                 {selectedFamily?.workerPhotoUrl &&  <><Box  style={{
                         flex: 1,
                         textAlign: "right",
                         paddingRight: "5px",
                         fontWeight: "bold",
                         color: "#396984",
-                      }}>BPL Certificate  </Box>:
+                      }}>Worker Photo  </Box>:
                        <Box
                       style={{
                         flex: 1,
@@ -299,8 +302,8 @@ if (modalContent) {
                         color: "#555",
                         
                       }}
-                      onClick={() => handleToggleEnlarged1(selectedFamily?.bplCertUrl)} 
-                    ><img src={selectedFamily?.bplCertUrl} height={200} width={150}  />
+                      onClick={() => handleToggleEnlarged1(selectedFamily?.workerPhotoUrl)} 
+                    ><img src={selectedFamily?.workerPhotoUrl} height={200} width={150}  />
                     
                     </Box></>}
                     {enlarged && currentValue && (
