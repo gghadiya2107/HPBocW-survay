@@ -44,9 +44,8 @@ const Hero = () => {
               opacity: 0.6,
             }}
           >
-            Efficiently collect and manage farmer data to maintain an updated Farmer Database, ensuring accurate and essential agricultural information for government and agricultural planning in your region.
-          </Typography>
-          <Link href="/apk/Survey1.12.apk" download>
+Efficiently collect and manage HPBoCW Contrator and Construction worker data to maintain an updated HPBoCW Database, ensuring accurate and essential information for government and HPBoCW planning.          </Typography>
+          <Link href="/apk/app-debug.apk" download>
             <Button
               variant="contained"
               // color="primary"

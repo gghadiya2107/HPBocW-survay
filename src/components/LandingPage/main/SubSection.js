@@ -93,8 +93,7 @@ const SubSection = () => {
                                 lineHeight: 1.8,
                                 paddingBottom: '30px',
                             }}>
-                            Easily log into the application using the credentials provided by the department, ensuring secure access to your authorized account. The Application user-friendly interface simplifies the login process for your convenience. Once logged in, you can explore the applications features and resources, making it a seamless experience.
-                        </Typography>
+Easily log into the application using the credentials provided by the HPBoCW Board, ensuring secure access to your authorized account. The Application user-friendly interface simplifies the login process for your convenience. Once logged in, you can explore the applications features and resources, making it a seamless experience.                        </Typography>
 
                     </Grid>
 
@@ -143,7 +142,7 @@ Conducting Survey
                                 lineHeight: 1.8,
                                 paddingBottom: '30px',
                             }}>
-The farmer database, utilizing data from the PM Kisan Database shared by the NIC Department, offers multiple convenient options for data collection. Surveyors can choose to proceed via the PM Kisan Database, streamlining the process if the farmer is registered in the database, or opt for a hassle-free survey without it. Additionally, the application allows you to easily add new farmers to the existing database, ensuring that the agricultural data is always up-to-date and accurate. With these flexible survey options, the application aims to provide a seamless and efficient experience while ensuring that the information contributes to the maintenance of essential agricultural records.   </Typography>
+The Construction Workers and Contractors database, offers multiple convenient options for data collection. Contractors/LEP Officers can choose to proceed via a hassle-free registration just by login into the application.  Additionally, the application allows you to easily register new construction workers to the existing database, ensuring that the data is always up-to-date, verified and accurate. With these flexible survey options, the application aims to provide a seamless and efficient experience while ensuring that the information contributes to the maintenance of essential HPBoCW records.  </Typography>
 
                     </Grid>
 
@@ -187,7 +186,8 @@ Data to be Captured
                                 lineHeight: 1.8,
                                 paddingBottom: '30px',
                             }}>
-Within the Farmer Database survey, it is imperative to capture a spectrum of key data elements ensuring comprehensive and accurate information. This encompasses gathering Aadhaar authentication, farmer details, land particulars, crop information, and capturing consent. The Aadhaar authentication provides a robust verification layer, while farmer details include essential demographics. Land details offer insights into agricultural holdings, while crop specifics shed light on farming activities. Consent collection ensures compliance and transparency throughout the process. Additionally, incorporating farmer photos adds a visual identification element, enhancing database integrity. These modules collectively contribute to a thorough and reliable farmer database, facilitating informed decision-making in agricultural management.                </Typography>
+Within the survey Database, it is imperative to capture a spectrum of key data elements ensuring comprehensive and accurate information. This encompasses gathering Aadhaar authentication, Construction Worker details, Bank details, Employer information, nessesary documents and capturing consent. The Aadhaar authentication provides a robust verification layer, while worker details include essential demographics. Employer details offer insights into details of the employer locations and certification. Consent collection ensures compliance and transparency throughout the process. Additionally, incorporating Worker photos adds a visual identification element, enhancing database integrity. These modules collectively contribute to a thorough and reliable HPBoCW Construction Workers database, facilitating informed decision-making in HPBoCW management.
+ </Typography>
 
                     </Grid>
 
