@@ -15,6 +15,7 @@ export const fetchFamiliesListFailure = (error) => ({
 });
 
 export const onFamiliesList = (body) => {
+  console.log('body', body)
   return async (dispatch) => {
     // debugger
     try {

@@ -19,11 +19,13 @@ export const fetchDashboardFaliure = (error) => ({
 
 // Async Action to Fetch Data
 export const onDashboarFilters = (body) => {
+  console.log('body', body)
   return async (dispatch) => {
     try {
       let url =  `/dashboard/report`
       if(body?.districtId){
-        url = url +  `?districtCode=${encryptDataGet(JSON.stringify(body?.districtId))}`
+        let value = typeof body?.districtId == "string" ? body?.districtId : JSON.stringify(body?.districtId)
+        url = url +  `?districtId=${encryptDataGet(value)}`
       }
       // if(body?.municipalId){
       //   url = url +  `&blockCode=${encryptDataGet(JSON.stringify(body?.municipalId))}`

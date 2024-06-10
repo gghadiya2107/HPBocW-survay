@@ -186,9 +186,9 @@ const ViewData = () => {
     setCardClicked(!isCardClicked);
   };
 
+  console.log('selectedDistrict', selectedDistrict)
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
-
     if (selectedDistrict ) {
       const queryParams = createQueryParamsDefault(
         newPage - 1,
@@ -282,6 +282,7 @@ const ViewData = () => {
     return queryParams;
   };
 
+  // select default
   useEffect(() => {
     const districtDetail = JSON.parse(getDistrict());
     // const municipalityDetail = JSON.parse(getPanchayat());
@@ -291,10 +292,10 @@ const ViewData = () => {
     const queryParams = createQueryParamsDefault(
       0,
       100,
-      districtDetail?.id,
+      // districtDetail?.id,
       // municipalityDetail?.municipalId,
       // ulb?.id,
-      1
+      
     );
     dispatch(onFamiliesList(queryParams));
   }, []);

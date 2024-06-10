@@ -53,16 +53,14 @@ export default function Filters({ onChange }) {
   const ward_reducer = useSelector((state) => state.ward_reducer?.data);
   const village_reducer = useSelector((state) => state.village_reducer?.data);
 
+
+  // default select
+
   useEffect(() => {
     try {
-      // const globalUser = JSON.parse(getToken());
       const districtData = JSON.parse(getDistrict());
       console.log('districtData', districtData)
-      // const municipalityDetail = JSON.parse(getPanchayat());
-      // const ulb = JSON.parse(getBlock());
-      // const villageData = JSON.parse(getVillage());
-      // const { districtDetail, municipalityDetail, ulb, roles, userName } =
-      //   globalUser || {};
+    
       let district_object = {
         label:
           districtData.districtName +
@@ -75,8 +73,8 @@ export default function Filters({ onChange }) {
 
       console.log(district_object, "district object");
 
-      setDistrict(district_object);
-      setDistrictId(districtData.code);
+      // setDistrict(district_object);
+      // setDistrictId(districtData.code);
       if (district_object.code) {
         setMunicipalCalled(true);
         dispatch(onMunicipalityList(district_object.code));
@@ -339,7 +337,7 @@ console.log('village_reducer', village_reducer)
             value={district}
             options={districtList}
             onChange={handleDistrictChange}
-            isDisabled={selectDisabledDistrict}
+            // isDisabled={selectDisabledDistrict}
           />
         </Grid>
 

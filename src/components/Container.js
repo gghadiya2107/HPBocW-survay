@@ -238,7 +238,7 @@ const Dashboard = () => {
 
         console.log('districtDetail', globalUser)
       const queryParams = createQueryParamsDefault(
-        globalUser?.id,
+        // globalUser?.id,
         // municipalityDetail?.municipalId,
         // ulb?.id
       );
