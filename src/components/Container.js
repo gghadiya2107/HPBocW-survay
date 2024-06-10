@@ -337,7 +337,7 @@ const Dashboard = () => {
                 textAlign={"left"}
                 style={{ paddingLeft: 10 }}
               >
-                Benificiary Category Status
+                Benificiary Category
               </Typography>
             </Box>
 
@@ -366,7 +366,7 @@ const Dashboard = () => {
                 textAlign={"left"}
                 style={{ paddingLeft: 10 }}
               >
-                Work Type Status
+                Work Type
               </Typography>
             </Box>
 
