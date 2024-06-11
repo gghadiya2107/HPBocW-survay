@@ -34,7 +34,7 @@ const Hero = () => {
               paddingBottom: "15px",
             }}
           >
-            Registration - Contractor & Construction Worker
+            Registration - BOC Workers
           </Typography>
           <Typography
             style={{
@@ -44,7 +44,7 @@ const Hero = () => {
               opacity: 0.6,
             }}
           >
-Efficiently collect and manage HPBoCW Contrator and Construction worker data to maintain an updated HPBoCW Database, ensuring accurate and essential information for government and HPBoCW planning.          </Typography>
+Efficiently collect and manage HPBoCW Construction Workers data to maintain an updated HPBoCW Database, ensuring accurate and essential information for government and HPBoCW planning.          </Typography>
           <Link href="/apk/app-debug.apk" download>
             <Button
               variant="contained"

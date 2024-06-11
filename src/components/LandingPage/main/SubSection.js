@@ -142,7 +142,7 @@ Conducting Survey
                                 lineHeight: 1.8,
                                 paddingBottom: '30px',
                             }}>
-The Construction Workers and Contractors database, offers multiple convenient options for data collection. Contractors/LEP Officers can choose to proceed via a hassle-free registration just by login into the application.  Additionally, the application allows you to easily register new construction workers to the existing database, ensuring that the data is always up-to-date, verified and accurate. With these flexible survey options, the application aims to provide a seamless and efficient experience while ensuring that the information contributes to the maintenance of essential HPBoCW records.  </Typography>
+The Construction Workers database, offers multiple convenient options for data collection. Contractors/LEP Officers can choose to proceed via a hassle-free registration just by login into the application.  Additionally, the application allows you to easily register new construction workers to the existing database, ensuring that the data is always up-to-date, verified and accurate. With these flexible survey options, the application aims to provide a seamless and efficient experience while ensuring that the information contributes to the maintenance of essential HPBoCW records.  </Typography>
 
                     </Grid>
 

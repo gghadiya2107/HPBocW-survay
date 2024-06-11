@@ -257,7 +257,7 @@ function SignIn(props) {
                 Welcome to{" "}
                 <Box sx={{ color: "#6366F1" }} target="_blank">
                 
-HPBoCW Contractor & Construction Worker Registration
+                HPBoCW Construction Workers Registration
                 </Box>
               </Typography>
 

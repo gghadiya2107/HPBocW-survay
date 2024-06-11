@@ -105,7 +105,7 @@ const ResponsiveAppBar = (props) => {
                             noWrap
                             component="div"
                             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                        >HPBoCW Contractor & Construction Worker Registration
+                        >HPBoCW Construction Workers Registration
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', } }}>
@@ -126,7 +126,7 @@ const ResponsiveAppBar = (props) => {
                             component="div"
                             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                         >
-                           HPBoCW Contractor & Construction Worker Registration
+                           HPBoCW Construction Workers Registration
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
                             {pages.map((page) => (
